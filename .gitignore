@@ -1,3 +1,5 @@
 # Ignorer Jupyter Notebook
 *.ipynb
-/env
+/env312
+Segformer_tune.pt
+Segformer_tune.pth
