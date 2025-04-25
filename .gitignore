@@ -1,5 +1,7 @@
 # Ignorer Jupyter Notebook
 *.ipynb
+*.__pycache__/
+*.pyc
 /env312
 Segformer_tune.pt
 Segformer_tune.pth
