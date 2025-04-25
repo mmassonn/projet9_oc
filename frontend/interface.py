@@ -5,9 +5,6 @@ from PIL import Image
 import base64
 import io
 
-#DATA_API_URL = "https://carsegmentationwebapp-bgggfnfgefdchrgp.francecentral-01.azurewebsites.net/image_path"
-#PREDICTION_API_URL = "https://carsegmentationwebapp-bgggfnfgefdchrgp.francecentral-01.azurewebsites.net/predict_mask"
-
 DATA_API_URL = "http://localhost:5000/image_path"
 PROCESSING_API_URL = "http://localhost:5000/process_image"
 PREDICTION_API_URL = "http://localhost:5000/predict_mask"
