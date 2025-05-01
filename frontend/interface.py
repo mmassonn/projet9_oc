@@ -130,9 +130,7 @@ with col2:
     selected_file_pred = st.selectbox("Sélectionnez un fichier à prédire", file_list, key="pred")
     if st.button("Création de l'image segmentée"):
         if selected_file_pred:
-            print(selected_file_pred)
             images_pred = send_post_request_prediction(selected_file_pred)
-            print(images_pred)
             if images_pred:
                 display_images(images_pred)
             else:
