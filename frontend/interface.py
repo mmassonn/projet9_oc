@@ -5,9 +5,9 @@ from PIL import Image
 import base64
 import io
 
-DATA_API_URL = "http://172.31.17.14:5000/image_path"
-PROCESSING_API_URL = "http://172.31.17.14:5000/process_image"
-PREDICTION_API_URL = "http://172.31.17.14:5000/predict_mask"
+DATA_API_URL = "http://51.20.98.229:5000/image_path"
+PROCESSING_API_URL = "http://51.20.98.229:5000/process_image"
+PREDICTION_API_URL = "http://51.20.98.229:5000/predict_mask"
 
 def get_file_list_from_api():
     """Récupére de la liste des images disponibles depuis l'api."""
