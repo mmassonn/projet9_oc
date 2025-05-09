@@ -105,15 +105,24 @@ def display_images(images, target_size=(512, 512)):
         with cols[idx]:
             st.image(array, caption=descriptions[key], use_container_width=True)
 
-st.title("Segmentation d'une scène urbaine.")
+# Repère principal (landmark) pour les lecteurs d'écran
+st.markdown('<main id="main-content" tabindex="-1"></main>', unsafe_allow_html=True)
+
+# Titre principal unique (équivalent <h1>)
+st.title("Segmentation d'une scène urbaine")
+
 file_list = get_file_list_from_api()
 
 col1, col2 = st.columns(2)
 
 # Partie gauche : Prétraitement
 with col1:
-    st.header("Prétraitement d'une image")
-    selected_file_pret = st.selectbox("Sélectionnez un fichier à prétraiter", file_list, key="pret")
+    st.header("Prétraitement d'une image")  # <h2>
+    selected_file_pret = st.selectbox(
+        "Sélectionnez un fichier à prétraiter",
+        file_list,
+        key="pret"
+    )
     if st.button("Réaliser le prétraitement de l'image"):
         if selected_file_pret:
             images_pret = send_post_request_processing(selected_file_pret)
@@ -126,8 +135,12 @@ with col1:
 
 # Partie droite : Prédiction
 with col2:
-    st.header("Réaliser la prédiction")
-    selected_file_pred = st.selectbox("Sélectionnez un fichier à prédire", file_list, key="pred")
+    st.header("Réaliser la prédiction")  # <h2>
+    selected_file_pred = st.selectbox(
+        "Sélectionnez un fichier à prédire",
+        file_list,
+        key="pred"
+    )
     if st.button("Création de l'image segmentée"):
         if selected_file_pred:
             images_pred = send_post_request_prediction(selected_file_pred)
